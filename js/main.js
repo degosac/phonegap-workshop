@@ -19,16 +19,15 @@ var app = {
       else {
         alert(title ? (title + ": " + message) : message);
       }
-    }
+    },
 
-    initialize: function() {
-        var self = this;
-        this.store = new MemoryStore(function(){
-          self.showAlert('Store Initialized', 'Info');
-        });
-        $('.search-key').on('keyup', $.proxy(this.findByName, this));
-    }
-
+    initialize: function(){
+    var self = this;
+    this.store = new MemoryStore(function(){
+        self.showAlert("Store Initialized", "Info");
+    });
+    $('.search-key').on('keyup', $.proxy(this.findByName, this));
+}
 };
 
 app.initialize();
